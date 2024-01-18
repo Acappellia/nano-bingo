@@ -1,5 +1,5 @@
 advancement revoke @a from mp:root
-title @a title "游戏开始"
+title @a title [{"text": "游 戏 开 始","color": "gold"}]
 
 data remove storage mp:bingo t_red.checks
 data remove storage mp:bingo t_green.checks

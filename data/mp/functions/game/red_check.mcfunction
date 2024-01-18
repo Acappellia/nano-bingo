@@ -1,6 +1,7 @@
 #define score_holder #check_id_mod
 
 execute as @a at @s run playsound block.end_portal_frame.fill player @s ~ ~ ~ 0.8
+tellraw @a [{"text": "> ","color": "gold"},{"text": "红队","color": "red"},{"text": "收集了一种物品！","color": "white"}]
 
 $data modify storage mp:bingo t_red.checks.$(check_id) set value 1
 execute if score #check_id mp matches 0..4 run scoreboard players add #score_red_l1 bingo_score 1

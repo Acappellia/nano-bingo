@@ -1,5 +1,5 @@
 data modify storage mp:bingo wins.blue.l1 set value 1
 execute as @e[type=item_display,tag=mp_bg_home] at @s run function mp:phone/menus/update_wins
-title @a[team=blue] title "B I N G O !"
-title @a[team=!blue] title "游戏结束！"
+title @a[team=blue] title [{"text":"B I N G O !","color":"gold"}]
+title @a[team=!blue] title [{"text":"游 戏 结 束","color":"gray"}]
 function mp:game/stop
