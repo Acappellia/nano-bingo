@@ -1,0 +1,36 @@
+{
+    "criteria": {
+        "get_item": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "glow_item_frame"
+                        ]
+                    }
+                ],
+                "player": [
+                    {
+                        "condition": "value_check",
+                        "value": {
+                            "type": "score",
+                            "score": "bingo_selected",
+                            "target": {
+                                "type": "minecraft:fixed",
+                                "name": "#item_30"
+                            }
+                        },
+                        "range": {
+                            "min": 1
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "mp:adv/30"
+    },
+    "parent": "mp:root"
+}

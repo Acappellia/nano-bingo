@@ -1,0 +1,36 @@
+{
+    "criteria": {
+        "get_item": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "feather"
+                        ]
+                    }
+                ],
+                "player": [
+                    {
+                        "condition": "value_check",
+                        "value": {
+                            "type": "score",
+                            "score": "bingo_selected",
+                            "target": {
+                                "type": "minecraft:fixed",
+                                "name": "#item_110"
+                            }
+                        },
+                        "range": {
+                            "min": 1
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "mp:adv/110"
+    },
+    "parent": "mp:root"
+}

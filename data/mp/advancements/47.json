@@ -1,0 +1,36 @@
+{
+    "criteria": {
+        "get_item": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "dead_fire_coral_block"
+                        ]
+                    }
+                ],
+                "player": [
+                    {
+                        "condition": "value_check",
+                        "value": {
+                            "type": "score",
+                            "score": "bingo_selected",
+                            "target": {
+                                "type": "minecraft:fixed",
+                                "name": "#item_47"
+                            }
+                        },
+                        "range": {
+                            "min": 1
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "mp:adv/47"
+    },
+    "parent": "mp:root"
+}

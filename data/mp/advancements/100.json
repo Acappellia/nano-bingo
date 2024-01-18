@@ -1,0 +1,36 @@
+{
+    "criteria": {
+        "get_item": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "pumpkin_pie"
+                        ]
+                    }
+                ],
+                "player": [
+                    {
+                        "condition": "value_check",
+                        "value": {
+                            "type": "score",
+                            "score": "bingo_selected",
+                            "target": {
+                                "type": "minecraft:fixed",
+                                "name": "#item_100"
+                            }
+                        },
+                        "range": {
+                            "min": 1
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "mp:adv/100"
+    },
+    "parent": "mp:root"
+}

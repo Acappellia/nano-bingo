@@ -1,0 +1,7 @@
+{
+    "criteria": {
+        "parent": {
+            "trigger": "impossible"
+        }
+    }
+}
