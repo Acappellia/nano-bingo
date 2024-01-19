@@ -10,6 +10,10 @@ data remove storage mp:bingo wins
 scoreboard objectives remove bingo_score
 scoreboard objectives add bingo_score dummy
 
+clear @a
+gamemode survival @a
+spreadplayers ~ ~ 5 50 true @a
+setworldspawn ~ ~ ~
 scoreboard objectives remove game_start
 scoreboard objectives add game_start dummy
 scoreboard players set @a game_start 1

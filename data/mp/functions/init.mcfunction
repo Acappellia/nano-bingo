@@ -1,3 +1,15 @@
+gamerule doDaylightCycle true
+gamerule keepInventory false
+gamerule doMobSpawning true
+gamerule doPatrolSpawning true
+gamerule doInsomnia true
+gamerule doWardenSpawning true
+gamerule disableRaids false
+gamerule mobGriefing true
+gamerule doImmediateRespawn true
+gamerule doFireTick false
+difficulty hard
+
 #define storage mp:tmp
 #define storage mp:player
 #define storage mp:data
@@ -5,12 +17,22 @@
 
 forceload add 0 0 0 0
 
+#define score_holder #player_id
+execute unless score #player_id mp matches 0.. run scoreboard players set #player_id mp -1
+
+scoreboard objectives add p_id dummy
+
 scoreboard objectives add mp dummy
 scoreboard players set #5 mp 5
 
 ##tmp scoreboard
 scoreboard objectives add p_open used:warped_fungus_on_a_stick
 scoreboard objectives add p_active_app dummy
+scoreboard objectives add check_sprint custom:sprint_one_cm
+scoreboard objectives add sprinting custom:time_since_death
+
+scoreboard objectives add check_boat custom:boat_one_cm
+scoreboard objectives add boating custom:time_since_death
 
 ##init data
 function mp:slow_tick
