@@ -9,4 +9,4 @@ execute store result storage mp:tmp chunk_info.xchunk int 1 run scoreboard playe
 execute store result storage mp:tmp chunk_info.xpos int 1 run scoreboard players add #bingo_x mp 16000
 function mp:game/load_chunk with storage mp:tmp chunk_info
 
-schedule function mp:game/next_ready 10s replace
+schedule function mp:game/next_ready 60s replace
