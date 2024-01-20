@@ -7,5 +7,5 @@ execute if score #game_open mp matches 1 as @a unless score @s game_start matche
 execute as @a if score @s check_sprint matches 1.. run scoreboard players set @s sprinting -5
 scoreboard players reset @a check_sprint
 
-execute as @a if score @s check_boat matches 1.. run scoreboard players set @s boating -3
+execute as @a if score @s check_boat matches 10.. run scoreboard players set @s boating -3
 scoreboard players reset @a check_boat
