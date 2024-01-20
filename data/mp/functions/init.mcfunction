@@ -24,6 +24,7 @@ scoreboard objectives add p_id dummy
 
 scoreboard objectives add mp dummy
 scoreboard players set #5 mp 5
+scoreboard players set #4 mp 4
 
 ##tmp scoreboard
 scoreboard objectives add p_open used:warped_fungus_on_a_stick

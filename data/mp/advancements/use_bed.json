@@ -1,0 +1,40 @@
+{
+    "criteria": {
+        "click_bed": {
+            "trigger": "item_used_on_block",
+            "conditions": {
+                "location": [
+                    {
+                        "condition": "location_check",
+                        "predicate": {
+                            "block": {
+                                "blocks": [
+                                    "white_bed",
+                                    "black_bed",
+                                    "light_gray_bed",
+                                    "gray_bed",
+                                    "red_bed",
+                                    "green_bed",
+                                    "lime_bed",
+                                    "yellow_bed",
+                                    "orange_bed",
+                                    "blue_bed",
+                                    "light_blue_bed",
+                                    "purple_bed",
+                                    "magenta_bed",
+                                    "pink_bed",
+                                    "cyan_bed",
+                                    "brown_bed",
+                                    "respawn_anchor"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "mp:bed/click"
+    }
+}

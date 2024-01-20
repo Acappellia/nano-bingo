@@ -1,5 +1,4 @@
 advancement revoke @a from mp:root
-title @a title [{"text": "游 戏 开 始","color": "gold"}]
 
 data remove storage mp:bingo t_red.checks
 data remove storage mp:bingo t_green.checks
@@ -9,6 +8,10 @@ data remove storage mp:bingo wins
 
 scoreboard objectives remove bingo_score
 scoreboard objectives add bingo_score dummy
+scoreboard players reset #game_wins_blue mp
+scoreboard players reset #game_wins_red mp
+scoreboard players reset #game_wins_yellow mp
+scoreboard players reset #game_wins_green mp
 
 clear @a
 gamemode survival @a
@@ -21,8 +24,13 @@ team leave @a
 
 function mp:game/generate_bingo
 
-execute as @r[team=] run function mp:game/join_teams_loop
+function mp:game/join_team
+
 execute as @a at @s run function mp:phone/player_close
 
 scoreboard players set #game_open mp 1
 execute as @a at @s run playsound item.goat_horn.sound.0 player @s ~ ~ ~
+
+title @a[team=!] subtitle [{"text": "本小队共有 ","color": "white"},{"score":{"name": "#team_member_max","objective": "mp"},"color": "yellow"},{"text": " 人，需要完成 ","color": "white"},{"score":{"name": "#target_score","objective": "bingo_score"},"color": "yellow"},{"text": " 条连线","color": "white"}]
+title @a[team=] subtitle [{"text": "本轮游戏轮空，其他小队各需要完成","color": "white"},{"score":{"name": "#target_score","objective": "bingo_score"},"color": "yellow"},{"text": " 条连线","color": "white"}]
+title @a title [{"text": "游 戏 开 始","color": "gold"}]
