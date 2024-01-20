@@ -48,6 +48,11 @@ function mp:2gttick
 scoreboard objectives add bingo_selected dummy
 scoreboard objectives add bingo_score dummy
 
+#define score_holder #allow_trigger
+execute unless score #game_open mp matches 1.. run scoreboard players set #allow_trigger mp 1
+scoreboard objectives add start trigger
+scoreboard players enable @a start
+
 team add red
 team modify red color red
 team modify red friendlyFire false
