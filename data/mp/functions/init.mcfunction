@@ -1,7 +1,7 @@
 gamerule keepInventory false
 gamerule doMobSpawning true
 gamerule doPatrolSpawning true
-gamerule doInsomnia true
+gamerule doInsomnia false
 gamerule doWardenSpawning true
 gamerule disableRaids false
 gamerule mobGriefing true
@@ -23,7 +23,6 @@ execute unless score #player_id mp matches 0.. run scoreboard players set #playe
 #define score_holder #bingo_xchunk
 execute unless score #bingo_x mp matches 0.. run scoreboard players set #bingo_x mp 0
 execute unless score #bingo_xchunk mp matches 0.. run scoreboard players set #bingo_xchunk mp 0
-
 
 scoreboard objectives add p_id dummy
 
