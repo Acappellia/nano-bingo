@@ -1,5 +1,7 @@
 #define score_holder #check_id_mod
 
+scoreboard players add @s stats_item_collected 1
+scoreboard players add @s reward_score 1
 execute as @a at @s run playsound block.end_portal_frame.fill player @s ~ ~ ~ 0.8
 tellraw @a [{"text": "> ","color": "gold"},{"selector": "@s","color": "red"},{"text": "收集了一种物品！","color": "white"}]
 

@@ -80,3 +80,8 @@ team modify blue collisionRule always
 team modify blue nametagVisibility always
 team modify blue seeFriendlyInvisibles true
 team join blue #blue
+
+##player stats
+scoreboard objectives add stats_item_collected dummy "收集的物品"
+scoreboard objectives add stats_lines_collected dummy "完成的连线"
+scoreboard objectives add reward_score dummy "可兑换分数"
