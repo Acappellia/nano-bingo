@@ -1,4 +1,4 @@
-execute if score #team_member mp = #team_member_max mp run return -1
+execute if score #team_member mp >= #team_member_max mp run return -1
 
 #define score_holder #team_loop
 execute unless score #team_loop mp matches 1.. run team join red @s

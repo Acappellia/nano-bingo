@@ -1,4 +1,3 @@
-gamerule doDaylightCycle true
 gamerule keepInventory false
 gamerule doMobSpawning true
 gamerule doPatrolSpawning true

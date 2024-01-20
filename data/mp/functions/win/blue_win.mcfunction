@@ -3,6 +3,6 @@ execute as @e[type=item_display,tag=mp_bg_home] at @s run function mp:phone/menu
 title @a[team=blue] title [{"text":"B I N G O !","color":"gold"}]
 execute as @a[team=blue] at @s run playsound item.goat_horn.sound.1 player @s ~ ~ ~
 title @a[team=!blue] title [{"text":"游 戏 结 束","color":"gray"}]
-execute as @a[team=!blue] at @s run playsound item.goat_horn.sound.3 player @s ~ ~ ~
+execute as @a[team=!blue] at @s run playsound item.goat_horn.sound.4 player @s ~ ~ ~
 tellraw @a [{"text": "> ","color": "gold"},{"text": "蓝队 ","color": "aqua"},{"text": "胜利！","color": "white"}]
 function mp:game/stop
