@@ -19,6 +19,12 @@ forceload add 0 0 0 0
 #define score_holder #player_id
 execute unless score #player_id mp matches 0.. run scoreboard players set #player_id mp -1
 
+#define score_holder #bingo_x
+#define score_holder #bingo_xchunk
+execute unless score #bingo_x mp matches 0.. run scoreboard players set #bingo_x mp 0
+execute unless score #bingo_xchunk mp matches 0.. run scoreboard players set #bingo_xchunk mp 0
+
+
 scoreboard objectives add p_id dummy
 
 scoreboard objectives add mp dummy

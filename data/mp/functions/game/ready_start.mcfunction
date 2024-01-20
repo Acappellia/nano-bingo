@@ -1,0 +1,1 @@
+$execute positioned $(xpos) 63 0 run function mp:game/find_spawn_loop
