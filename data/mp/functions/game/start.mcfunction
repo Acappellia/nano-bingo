@@ -14,6 +14,7 @@ scoreboard players reset #game_wins_yellow mp
 scoreboard players reset #game_wins_green mp
 
 setworldspawn ~ ~ ~
+kill @e[type=item]
 
 gamerule doDaylightCycle true
 scoreboard objectives remove game_start
@@ -38,3 +39,4 @@ clear @a
 gamemode survival @a
 spreadplayers ~ ~ 5 50 true @a
 time set 1000
+difficulty hard
