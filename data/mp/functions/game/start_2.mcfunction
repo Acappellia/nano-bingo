@@ -1,5 +1,3 @@
-advancement revoke @a from mp:root
-
 data remove storage mp:bingo t_red.checks
 data remove storage mp:bingo t_green.checks
 data remove storage mp:bingo t_blue.checks
@@ -35,10 +33,17 @@ title @a[team=!] subtitle [{"text": "每个小队共有 ","color": "white"},{"sc
 title @a[team=] subtitle [{"text": "本轮游戏轮空，其他小队各需要完成 ","color": "white"},{"score":{"name": "#target_score","objective": "bingo_score"},"color": "yellow"},{"text": " 条连线","color": "white"}]
 title @a title [{"text": "游 戏 开 始","color": "gold"}]
 
+execute store result bossbar roundtime value run scoreboard players set #round_time mp 3900
+bossbar set roundtime visible true
+bossbar set roundtime players @a
+bossbar set roundinterval visible false
+
+advancement revoke @a everything
 clear @a
+effect clear @a
 gamemode survival @a
 tp @a ~ ~ ~
-spreadplayers ~ ~ 5 50 true @a
+spreadplayers ~ ~ 5 32 true @a
 execute as @a at @s run playsound item.goat_horn.sound.0 player @s ~ ~ ~
 time set 1000
 difficulty hard

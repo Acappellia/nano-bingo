@@ -10,7 +10,4 @@ scoreboard players reset @a check_sprint
 execute as @a if score @s check_boat matches 10.. run scoreboard players set @s boating -3
 scoreboard players reset @a check_boat
 
-execute if score #game_open mp matches 1 unless entity @e[team=!] run function mp:game/stop
-scoreboard players enable @a start
-
-execute as @a[scores={start=1..}] run function mp:player_trigger
+execute as @a[scores={start=1..}] run function mp:triggers/start

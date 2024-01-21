@@ -29,6 +29,7 @@ scoreboard objectives add p_id dummy
 scoreboard objectives add mp dummy
 scoreboard players set #5 mp 5
 scoreboard players set #4 mp 4
+scoreboard players set #60 mp 60
 
 ##tmp scoreboard
 scoreboard objectives add p_open used:warped_fungus_on_a_stick
@@ -80,6 +81,16 @@ team modify blue collisionRule always
 team modify blue nametagVisibility always
 team modify blue seeFriendlyInvisibles true
 team join blue #blue
+
+bossbar add roundtime "游戏时间"
+bossbar set roundtime color green
+bossbar set roundtime style notched_6
+bossbar set roundtime max 3900
+
+bossbar add roundinterval "新游戏准备中"
+bossbar set roundinterval color yellow
+bossbar set roundinterval style progress
+bossbar set roundinterval max 60
 
 ##player stats
 scoreboard objectives add stats_item_collected dummy "收集的物品"

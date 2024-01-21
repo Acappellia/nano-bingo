@@ -1,6 +1,6 @@
-advancement revoke @s from mp:root
+team leave @s
+advancement revoke @s everything
 title @s title "请等待本局游戏结束……"
 clear @s
 gamemode survival @s
-team leave @s
 scoreboard players set @s game_start 1
