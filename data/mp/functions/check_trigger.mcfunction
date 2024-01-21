@@ -14,14 +14,14 @@ execute as @a[scores={setting_difficulty=1}] run function mp:triggers/difficulty
 execute as @a[scores={setting_difficulty=2}] run function mp:triggers/difficulty_normal
 execute as @a[scores={setting_difficulty=3}] run function mp:triggers/difficulty_hard
 execute as @a[scores={setting_max_team=1..4}] run function mp:triggers/maxteam
-execute as @a[scores={setting_random_team=0}] run function mp:triggers/random_team_off
+execute as @a[scores={setting_random_team=-1}] run function mp:triggers/random_team_off
 execute as @a[scores={setting_random_team=1}] run function mp:triggers/random_team_on
-execute as @a[scores={setting_team_balance=0}] run function mp:triggers/team_balance_off
+execute as @a[scores={setting_team_balance=-1}] run function mp:triggers/team_balance_off
 execute as @a[scores={setting_team_balance=1}] run function mp:triggers/team_balance_on
-execute as @a[scores={setting_bingo_target=0}] run function mp:triggers/bingo_target_auto
+execute as @a[scores={setting_bingo_target=-1}] run function mp:triggers/bingo_target_auto
 execute as @a[scores={setting_bingo_target=1..5}] run function mp:triggers/bingo_target
 
-execute as @a[scores={player_join_team=0}] run function mp:triggers/join_0
+execute as @a[scores={player_join_team=-1}] run function mp:triggers/join_0
 execute as @a[scores={player_join_team=1}] run function mp:triggers/join_1
 execute as @a[scores={player_join_team=2}] run function mp:triggers/join_2
 execute as @a[scores={player_join_team=3}] run function mp:triggers/join_3

@@ -7,7 +7,6 @@ gamerule disableRaids false
 gamerule mobGriefing true
 gamerule doImmediateRespawn true
 gamerule doFireTick false
-difficulty hard
 
 #define storage mp:tmp
 #define storage mp:player
@@ -104,7 +103,8 @@ bossbar set roundinterval max 60
 ##player stats
 scoreboard objectives add stats_item_collected dummy "收集的物品"
 scoreboard objectives add stats_lines_collected dummy "完成的连线"
-scoreboard objectives add reward_score dummy "可兑换分数"
+scoreboard objectives add reward_score dummy "总分数"
+scoreboard objectives setdisplay sidebar stats_item_collected
 
 ##game default settings
 #define score_holder #max_team
@@ -113,8 +113,8 @@ scoreboard objectives add reward_score dummy "可兑换分数"
 #define score_holder #team_balance
 #define score_holder #bingo_target
 
-scoreboard players set #difficulty mp 3
-scoreboard players set #max_team mp 4
-scoreboard players set #random_team mp 1
-scoreboard players set #team_balance mp 1
-scoreboard players set #bingo_target mp 0
+execute unless score #difficulty mp matches 1..3 run scoreboard players set #difficulty mp 3
+execute unless score #difficulty mp matches 1..4 run scoreboard players set #max_team mp 4
+execute unless score #difficulty mp matches 0..1 run scoreboard players set #random_team mp 1
+execute unless score #difficulty mp matches 0..1 run scoreboard players set #team_balance mp 1
+execute unless score #difficulty mp matches -1..5 run scoreboard players set #bingo_target mp 0

@@ -2,7 +2,7 @@ execute as @a[scores={p_open=1..}] if data entity @s SelectedItem.tag.bingo at @
 
 execute as @e[type=item_display,tag=mp_bg_home] at @s run function mp:phone/check_tp2p
 
-execute if score #game_open mp matches 1 as @a unless score @s game_start matches 1 run function mp:game/join_intergame
+execute if score #game_open mp matches 1 as @a unless score @s ingame matches 1 run function mp:game/join_intergame
 
 execute as @a if score @s check_sprint matches 1.. run scoreboard players set @s sprinting -5
 scoreboard players reset @a check_sprint

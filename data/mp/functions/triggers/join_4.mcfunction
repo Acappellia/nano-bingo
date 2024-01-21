@@ -10,4 +10,4 @@ execute if score #max_team mp matches ..3 run tellraw @s [{"text": "> ","color":
 execute if score #max_team mp matches ..3 run return -1
 
 team join blue
-tellraw @a [{"text": "> ","color": "gold"},{"selector":"@s"},{"text": " 已加入 ","color": "white"},{"text": "绿队","color": "green"}]
+tellraw @a [{"text": ">","color": "gold"},{"text": " ","color": "white"},{"selector":"@s"},{"text": " 已加入 ","color": "white"},{"text": "绿队","color": "green"}]
