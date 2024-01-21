@@ -10,4 +10,4 @@ scoreboard players reset @a check_sprint
 execute as @a if score @s check_boat matches 10.. run scoreboard players set @s boating -3
 scoreboard players reset @a check_boat
 
-execute as @a[scores={start=1..}] run function mp:triggers/start
+function mp:check_trigger

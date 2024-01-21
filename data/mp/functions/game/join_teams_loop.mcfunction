@@ -10,7 +10,7 @@ execute if score #team_loop mp matches 2 run tellraw @s [{"text": "> ","color": 
 execute if score #team_loop mp matches 3 run team join blue @s
 execute if score #team_loop mp matches 3 run tellraw @s [{"text": "> ","color": "gold"},{"text": "您已加入","color": "white"},{"text": "蓝队","color": "aqua"}]
 scoreboard players add #team_loop mp 1
-execute if score #team_loop mp matches 4.. run scoreboard players add #team_member mp 1
-execute if score #team_loop mp matches 4.. run scoreboard players reset #team_loop mp
+execute if score #team_loop mp >= max_team mp run scoreboard players add #team_member mp 1
+execute if score #team_loop mp >= max_team mp run scoreboard players reset #team_loop mp
 
 execute as @r[team=] run function mp:game/join_teams_loop

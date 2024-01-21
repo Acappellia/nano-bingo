@@ -50,8 +50,17 @@ scoreboard objectives add bingo_score dummy
 
 #define score_holder #allow_trigger
 execute unless score #game_open mp matches 1.. run scoreboard players set #allow_trigger mp 1
-scoreboard objectives add start trigger
-scoreboard players enable @a start
+
+scoreboard objectives add game_start trigger [{"text": "开始游戏","color": "gold"}]
+scoreboard objectives add game_vote_stop trigger [{"text": "投票结束游戏","color": "gold"}]
+
+scoreboard objectives add setting_difficulty trigger [{"text": "难度设置","color": "gold"}]
+scoreboard objectives add setting_random_team trigger [{"text": "随机入队","color": "gold"}]
+scoreboard objectives add setting_team_balance trigger [{"text": "队伍平衡","color": "gold"}]
+scoreboard objectives add setting_max_team trigger [{"text": "最大队伍数量","color": "gold"}]
+scoreboard objectives add setting_bingo_target trigger [{"text": "游戏目标","color": "gold"}]
+
+scoreboard objectives add player_join_team trigger [{"text": "加入队伍","color": "gold"}]
 
 team add red
 team modify red color red
@@ -96,3 +105,16 @@ bossbar set roundinterval max 60
 scoreboard objectives add stats_item_collected dummy "收集的物品"
 scoreboard objectives add stats_lines_collected dummy "完成的连线"
 scoreboard objectives add reward_score dummy "可兑换分数"
+
+##game default settings
+#define score_holder #max_team
+#define score_holder #difficulty
+#define score_holder #random_team
+#define score_holder #team_balance
+#define score_holder #bingo_target
+
+scoreboard players set #difficulty mp 3
+scoreboard players set #max_team mp 4
+scoreboard players set #random_team mp 1
+scoreboard players set #team_balance mp 1
+scoreboard players set #bingo_target mp 0

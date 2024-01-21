@@ -1,3 +1,12 @@
+function mp:emtpy_teams
+
+execute if score #random_team mp matches 1 if score #team_balance mp matches 1 run function mp:game/join_team_random_bal
+execute if score #random_team mp matches 1 if score #team_balance mp matches 0 run function mp:game/join_team_random_unbal
+execute if score #random_team mp matches 0 run function mp:game/no_join_team
+
+execute unless entity @a[team=!] run tellraw @a [{"text": "> ","color": "gold"},{"text": "没有玩家参与，无法开启游戏","color": "red"}]
+execute unless entity @a[team=!] run return -1
+
 data remove storage mp:bingo t_red.checks
 data remove storage mp:bingo t_green.checks
 data remove storage mp:bingo t_blue.checks
@@ -19,19 +28,16 @@ gamerule doDaylightCycle true
 scoreboard objectives remove game_start
 scoreboard objectives add game_start dummy
 scoreboard players set @a game_start 1
-team leave @a
+
+scoreboard objectives remove game_vote_stop
+scoreboard objectives add game_vote_stop trigger [{"text": "投票结束游戏","color": "gold"}]
+scoreboard players set @a game_vote_stop 0
 
 function mp:game/generate_bingo
-
-function mp:game/join_team
 
 execute as @a at @s run function mp:phone/player_close
 
 scoreboard players set #game_open mp 1
-
-title @a[team=!] subtitle [{"text": "每个小队共有 ","color": "white"},{"score":{"name": "#team_member_max","objective": "mp"},"color": "yellow"},{"text": " 人，需要完成 ","color": "white"},{"score":{"name": "#target_score","objective": "bingo_score"},"color": "yellow"},{"text": " 条连线","color": "white"}]
-title @a[team=] subtitle [{"text": "本轮游戏轮空，其他小队各需要完成 ","color": "white"},{"score":{"name": "#target_score","objective": "bingo_score"},"color": "yellow"},{"text": " 条连线","color": "white"}]
-title @a title [{"text": "游 戏 开 始","color": "gold"}]
 
 execute store result bossbar roundtime value run scoreboard players set #round_time mp 3900
 bossbar set roundtime visible true
@@ -46,4 +52,7 @@ tp @a ~ ~ ~
 spreadplayers ~ ~ 5 32 true @a
 execute as @a at @s run playsound item.goat_horn.sound.0 player @s ~ ~ ~
 time set 1000
-difficulty hard
+
+execute if score #difficulty mp matches 1 run difficulty easy
+execute if score #difficulty mp matches 2 run difficulty normal
+execute unless score #difficulty mp matches 1..2 run difficulty hard
