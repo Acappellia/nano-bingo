@@ -11,10 +11,8 @@ execute store result score #team_member mp if entity @a[team=green]
 execute if score #team_member mp matches 1.. if score #team_member mp < #team_member_min mp run scoreboard players operation #team_member_min mp = #team_member mp
 
 execute if score #team_member_min mp matches ..2 run scoreboard players set #target_score bingo_score 1
-execute if score #team_member_min mp matches 3..4 run scoreboard players set #target_score bingo_score 2
-execute if score #team_member_min mp matches 5..6 run scoreboard players set #target_score bingo_score 3
-execute if score #team_member_min mp matches 7..8 run scoreboard players set #target_score bingo_score 4
-execute if score #team_member_min mp matches 9.. run scoreboard players set #target_score bingo_score 5
+execute if score #team_member_min mp matches 3..5 run scoreboard players set #target_score bingo_score 2
+execute if score #team_member_min mp matches 6.. run scoreboard players set #target_score bingo_score 3
 
 execute if score #bingo_target mp matches 1..5 run scoreboard players operation #target_score bingo_score = #bingo_target mp
 

@@ -14,10 +14,7 @@ execute store result bossbar roundinterval value run scoreboard players set #rou
 bossbar set roundinterval name [{"text": "新游戏准备中","color": "gray"}]
 bossbar set roundinterval players @a
 
-execute store result storage mp:tmp chunk_info.xposmin int 1 run scoreboard players add #bingo_x mp 15968
-execute store result storage mp:tmp chunk_info.xposmax int 1 run scoreboard players add #bingo_x mp 64
-execute store result storage mp:tmp chunk_info.xpos int 1 run scoreboard players remove #bingo_x mp 32
-function mp:game/load_chunk with storage mp:tmp chunk_info
+schedule function mp:game/load_chunk_schedule 1s replace
 
 execute if score #random_team mp matches 1 run function mp:emtpy_teams
 
