@@ -98,7 +98,7 @@ bossbar set roundtime color green
 bossbar set roundtime style notched_6
 bossbar set roundtime max 3900
 
-bossbar add roundinterval "新游戏准备中"
+bossbar add roundinterval "新游戏准备完成"
 bossbar set roundinterval color yellow
 bossbar set roundinterval style progress
 bossbar set roundinterval max 60
@@ -117,7 +117,7 @@ scoreboard objectives setdisplay sidebar stats_item_collected
 #define score_holder #bingo_target
 
 execute unless score #difficulty mp matches 1..3 run scoreboard players set #difficulty mp 3
-execute unless score #difficulty mp matches 1..4 run scoreboard players set #max_team mp 4
-execute unless score #difficulty mp matches 0..1 run scoreboard players set #random_team mp 1
-execute unless score #difficulty mp matches 0..1 run scoreboard players set #team_balance mp 0
-execute unless score #difficulty mp matches -1..5 run scoreboard players set #bingo_target mp 0
+execute unless score #max_team mp matches 1..4 run scoreboard players set #max_team mp 4
+execute unless score #random_team mp matches 0..1 run scoreboard players set #random_team mp 1
+execute unless score #team_balance mp matches 0..1 run scoreboard players set #team_balance mp 0
+execute unless score #bingo_target mp matches -1..5 run scoreboard players set #bingo_target mp 0
