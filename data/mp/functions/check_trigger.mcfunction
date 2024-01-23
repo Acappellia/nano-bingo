@@ -6,6 +6,8 @@ scoreboard players enable @a setting_random_team
 scoreboard players enable @a setting_team_balance
 scoreboard players enable @a setting_bingo_target
 scoreboard players enable @a player_join_team
+scoreboard players enable @a help
+scoreboard players enable @a setting_check
 
 execute as @a[scores={game_start=1..}] run function mp:triggers/start
 execute as @a[scores={game_vote_stop=1}] run function mp:triggers/vote_stop
@@ -26,3 +28,6 @@ execute as @a[scores={player_join_team=1}] run function mp:triggers/join_1
 execute as @a[scores={player_join_team=2}] run function mp:triggers/join_2
 execute as @a[scores={player_join_team=3}] run function mp:triggers/join_3
 execute as @a[scores={player_join_team=4}] run function mp:triggers/join_4
+
+execute as @a[scores={help=1..}] run function mp:triggers/help
+execute as @a[scores={setting_check=1..}] run function mp:triggers/setting_check

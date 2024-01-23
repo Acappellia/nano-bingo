@@ -1,0 +1,16 @@
+scoreboard players reset @s setting_check
+
+tellraw @s [{"text": "[ ","color": "dark_green"},{"text": "当前游戏设置","color": "green"},{"text": " ]","color": "dark_green"}]
+execute if score #random_team mp matches 1 run tellraw @s [{"text": "> ","color": "gold"},{"text": "随机组队","color": "green"}]
+execute if score #random_team mp matches 0 run tellraw @s [{"text": "> ","color": "gold"},{"text": "玩家预组队","color": "aqua"}]
+execute if score #random_team mp matches 1 if score #team_balance mp matches 0 run tellraw @s [{"text": "> ","color": "gold"},{"text": "未开启队伍人数平衡","color": "yellow"}]
+execute if score #random_team mp matches 1 if score #team_balance mp matches 1 run tellraw @s [{"text": "> ","color": "gold"},{"text": "开启队伍人数平衡","color": "gold"}]
+execute if score #max_team mp matches 1 run tell @s [{"text": "> ","color": "gold"},{"text": "最大队伍数 - ","color": "white"},{"text": "1","color": "yellow"},{"text": " (合作模式)","color": "gray"}]
+execute if score #max_team mp matches 2 run tell @s [{"text": "> ","color": "gold"},{"text": "最大队伍数 - ","color": "white"},{"text": "2","color": "yellow"}]
+execute if score #max_team mp matches 3 run tell @s [{"text": "> ","color": "gold"},{"text": "最大队伍数 - ","color": "white"},{"text": "3","color": "yellow"}]
+execute if score #max_team mp matches 4 run tell @s [{"text": "> ","color": "gold"},{"text": "最大队伍数 - ","color": "white"},{"text": "4","color": "yellow"}]
+execute if score #difficulty mp matches 1 run tellraw @s [{"text": "> ","color": "gold"},{"text": "游戏难度 - ","color": "white"},{"text": "简单","color": "green"}]
+execute if score #difficulty mp matches 2 run tellraw @s [{"text": "> ","color": "gold"},{"text": "游戏难度 - ","color": "white"},{"text": "普通","color": "yellow"}]
+execute if score #difficulty mp matches 3 run tellraw @s [{"text": "> ","color": "gold"},{"text": "游戏难度 - ","color": "white"},{"text": "困难","color": "red"}]
+execute unless score #bingo_target mp matches 1.. run tellraw @a [{"text": "> ","color": "gold"},{"text": "目标连线数 - ","color": "white"},{"text": " 自动设置","color": "yellow"}]
+execute if score #bingo_target mp matches 1.. run tellraw @a [{"text": "> ","color": "gold"},{"text": "目标连线数 - ","color": "white"},{"score":{"name": "#bingo_target","objective": "mp"},"color": "yellow"}]

@@ -61,6 +61,9 @@ scoreboard objectives add setting_bingo_target trigger [{"text": "游戏目标",
 
 scoreboard objectives add player_join_team trigger [{"text": "加入队伍","color": "gold"}]
 
+scoreboard objectives add help trigger [{"text": "帮助","color": "gold"}]
+scoreboard objectives add setting_check trigger [{"text": "帮助","color": "gold"}]
+
 team add red
 team modify red color red
 team modify red friendlyFire false
@@ -116,5 +119,5 @@ scoreboard objectives setdisplay sidebar stats_item_collected
 execute unless score #difficulty mp matches 1..3 run scoreboard players set #difficulty mp 3
 execute unless score #difficulty mp matches 1..4 run scoreboard players set #max_team mp 4
 execute unless score #difficulty mp matches 0..1 run scoreboard players set #random_team mp 1
-execute unless score #difficulty mp matches 0..1 run scoreboard players set #team_balance mp 1
+execute unless score #difficulty mp matches 0..1 run scoreboard players set #team_balance mp 0
 execute unless score #difficulty mp matches -1..5 run scoreboard players set #bingo_target mp 0

@@ -1,1 +1,0 @@
-tellraw @s "version v1.1"
