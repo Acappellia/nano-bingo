@@ -12,4 +12,4 @@ tellraw @s [{"text": "- ","color": "gray"},{"text": "打开游戏菜单","color"
 tellraw @s [{"text": "> ","color": "gold"},{"text": "/trigger menu","color": "aqua"}]
 
 tellraw @s [{"text": " ","color": "white"}]
-tellraw @s [{"text": "> ","color": "gold"},{"text": "nano-bingo","color": "yellow"},{"text": " v1.2 ","color": "white"},{"text": "制作：","color": "gray"},{"text":"Ran_nano | 兰那梛","color":"white"}]
+tellraw @s [{"text": "> ","color": "gold"},{"text": "nano-bingo","color": "yellow"},{"text": " v1.2.1 ","color": "white"},{"text": "制作：","color": "gray"},{"text":"Ran_nano | 兰那梛","color":"white"}]
