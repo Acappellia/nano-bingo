@@ -39,6 +39,8 @@ scoreboard objectives add sprinting custom:time_since_death
 scoreboard objectives add check_boat custom:boat_one_cm
 scoreboard objectives add boating custom:time_since_death
 
+scoreboard objectives add first_login dummy
+
 ##init data
 function mp:slow_tick
 function mp:2gttick
