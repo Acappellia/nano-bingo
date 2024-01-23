@@ -4,7 +4,7 @@ scoreboard players reset #team_loop mp
 
 execute as @r[team=] run function mp:game/join_teams_loop
 
-execute if score #team_member mp matches ..2 run scoreboard players set #target_score bingo_score 1
+execute unless score #team_member mp matches 3.. run scoreboard players set #target_score bingo_score 1
 execute if score #team_member mp matches 3..5 run scoreboard players set #target_score bingo_score 2
 execute if score #team_member mp matches 6.. run scoreboard players set #target_score bingo_score 3
 

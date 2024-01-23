@@ -8,9 +8,10 @@ scoreboard players enable @a setting_bingo_target
 scoreboard players enable @a player_join_team
 scoreboard players enable @a help
 scoreboard players enable @a setting_check
+scoreboard players enable @a menu
 
 execute as @a[scores={game_start=1..}] run function mp:triggers/start
-execute as @a[scores={game_vote_stop=1}] run function mp:triggers/vote_stop
+execute as @a[scores={game_vote_stop=1..998}] run function mp:triggers/vote_stop
 
 execute as @a[scores={setting_difficulty=1}] run function mp:triggers/difficulty_easy
 execute as @a[scores={setting_difficulty=2}] run function mp:triggers/difficulty_normal
@@ -31,3 +32,4 @@ execute as @a[scores={player_join_team=4}] run function mp:triggers/join_4
 
 execute as @a[scores={help=1..}] run function mp:triggers/help
 execute as @a[scores={setting_check=1..}] run function mp:triggers/setting_check
+execute as @a[scores={menu=1..}] run function mp:triggers/menu

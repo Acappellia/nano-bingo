@@ -1,3 +1,5 @@
+gamerule commandBlockOutput false
+gamerule sendCommandFeedback false
 gamerule keepInventory false
 gamerule doMobSpawning true
 gamerule doPatrolSpawning true
@@ -64,7 +66,8 @@ scoreboard objectives add setting_bingo_target trigger [{"text": "游戏目标",
 scoreboard objectives add player_join_team trigger [{"text": "加入队伍","color": "gold"}]
 
 scoreboard objectives add help trigger [{"text": "帮助","color": "gold"}]
-scoreboard objectives add setting_check trigger [{"text": "帮助","color": "gold"}]
+scoreboard objectives add menu trigger [{"text": "菜单","color": "gold"}]
+scoreboard objectives add setting_check trigger [{"text": "查看设置","color": "gold"}]
 
 team add red
 team modify red color red
@@ -122,4 +125,4 @@ execute unless score #difficulty mp matches 1..3 run scoreboard players set #dif
 execute unless score #max_team mp matches 1..4 run scoreboard players set #max_team mp 4
 execute unless score #random_team mp matches 0..1 run scoreboard players set #random_team mp 1
 execute unless score #team_balance mp matches 0..1 run scoreboard players set #team_balance mp 0
-execute unless score #bingo_target mp matches -1..5 run scoreboard players set #bingo_target mp 0
+execute unless score #bingo_target mp matches -1..5 run scoreboard players set #bingo_target mp -1
