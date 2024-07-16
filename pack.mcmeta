@@ -1,13 +1,13 @@
 {
     "pack": {
-        "pack_format": 26,
+        "pack_format": 48,
         "description": [
             {
                 "text": "Bingo minigame by Ran_nano\n",
                 "color": "#a8e64c"
             },
             {
-                "text": "MC 1.20.4",
+                "text": "MC 1.21",
                 "color": "#909090"
             }
         ]
