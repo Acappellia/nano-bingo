@@ -7,8 +7,8 @@ gamerule doInsomnia false
 gamerule doWardenSpawning true
 gamerule disableRaids false
 gamerule mobGriefing true
-gamerule doImmediateRespawn true
-gamerule doFireTick false
+gamerule doImmediateRespawn false
+gamerule doFireTick true
 
 #define storage mp:tmp
 #define storage mp:player
