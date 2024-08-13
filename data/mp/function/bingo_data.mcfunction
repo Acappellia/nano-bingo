@@ -187,7 +187,7 @@ data modify storage mp:bingo pool set value [\
 {id:184,item:"detector_rail"},\
 {id:185,item:"furnace_minecart"},\
 {id:186,item:"diamond_pickaxe"},\
-{id:187,item:"diamind_axe"},\
+{id:187,item:"diamond_axe"},\
 {id:188,item:"cod_bucket"},\
 {id:189,item:"salmon_bucket"},\
 {id:190,item:"shield"},\
@@ -277,7 +277,7 @@ data modify storage mp:bingo pool set value [\
 {id:274,item:"crimson_hyphae"},\
 {id:275,item:"warped_hyphae"},\
 {id:276,item:"crimson_hanging_sign"},\
-{id:277,item:"warped_handing_sign"},\
+{id:277,item:"warped_hanging_sign"},\
 {id:278,item:"crimson_sign"},\
 {id:279,item:"warped_sign"},\
 {id:280,item:"shroomlight"},\
@@ -324,7 +324,7 @@ data modify storage mp:bingo pool set value [\
 {id:321,item:"glow_ink_sac"},\
 {id:322,item:"turtle_scute"},\
 {id:323,item:"armadillo_scute"},\
-{id:324,item:"walf_armor"},\
+{id:324,item:"wolf_armor"},\
 {id:325,item:"prismarine_shard"},\
 {id:326,item:"prismarine_crystals"},\
 {id:327,item:"nautilus_shell"},\
