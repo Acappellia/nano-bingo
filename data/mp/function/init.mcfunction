@@ -116,7 +116,7 @@ bossbar set roundinterval max 60
 scoreboard objectives add stats_item_collected dummy "收集的物品"
 scoreboard objectives add stats_lines_collected dummy "完成的连线"
 scoreboard objectives add reward_score dummy "总分数"
-scoreboard objectives setdisplay sidebar stats_item_collected
+#scoreboard objectives setdisplay sidebar stats_item_collected
 
 ##game default settings
 #define score_holder #max_team
