@@ -1,5 +1,3 @@
-scoreboard players reset @s p_ani_cd
-scoreboard players reset @s p_select
 scoreboard players set @s p_active_app 1
 
 playsound ui.button.click block @s ~ ~ ~ 1 1.2
