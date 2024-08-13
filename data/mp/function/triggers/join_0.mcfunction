@@ -8,3 +8,4 @@ execute if score #random_team mp matches 1 run return -1
 
 team leave @s
 tellraw @a [{"text": ">","color": "gold"},{"text": " ","color": "white"},{"selector":"@s"},{"text": " 已退出所有队伍","color": "white"}]
+function mp:triggers/menu

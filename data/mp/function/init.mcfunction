@@ -57,11 +57,15 @@ execute unless score #game_open mp matches 1.. run scoreboard players set #allow
 scoreboard objectives add game_start trigger [{"text": "开始游戏","color": "gold"}]
 scoreboard objectives add game_vote_stop trigger [{"text": "投票结束游戏","color": "gold"}]
 
-scoreboard objectives add setting_difficulty trigger [{"text": "难度设置","color": "gold"}]
+scoreboard objectives add setting_difficulty trigger [{"text": "原版难度","color": "gold"}]
 scoreboard objectives add setting_random_team trigger [{"text": "随机入队","color": "gold"}]
 scoreboard objectives add setting_team_balance trigger [{"text": "队伍平衡","color": "gold"}]
 scoreboard objectives add setting_max_team trigger [{"text": "最大队伍数量","color": "gold"}]
 scoreboard objectives add setting_bingo_target trigger [{"text": "游戏目标","color": "gold"}]
+
+scoreboard objectives add setting_deathdrop trigger [{"text": "死亡掉落","color": "gold"}]
+scoreboard objectives add setting_bingo_list trigger [{"text": "物品列表","color": "gold"}]
+scoreboard objectives add setting_bingo_mode trigger [{"text": "游戏模式","color": "gold"}]
 
 scoreboard objectives add player_join_team trigger [{"text": "加入队伍","color": "gold"}]
 
@@ -121,8 +125,13 @@ scoreboard objectives setdisplay sidebar stats_item_collected
 #define score_holder #team_balance
 #define score_holder #bingo_target
 
-execute unless score #difficulty mp matches 1..3 run scoreboard players set #difficulty mp 3
-execute unless score #max_team mp matches 1..4 run scoreboard players set #max_team mp 4
-execute unless score #random_team mp matches 0..1 run scoreboard players set #random_team mp 1
-execute unless score #team_balance mp matches 0..1 run scoreboard players set #team_balance mp 0
+execute unless score #difficulty mp matches -1..3 run scoreboard players set #difficulty mp 3
+execute unless score #max_team mp matches -1..4 run scoreboard players set #max_team mp 4
+execute unless score #random_team mp matches -1..1 run scoreboard players set #random_team mp 1
+execute unless score #team_balance mp matches -1..1 run scoreboard players set #team_balance mp 0
 execute unless score #bingo_target mp matches -1..5 run scoreboard players set #bingo_target mp -1
+execute unless score #death_drop mp matches -1..1 run scoreboard players set #death_drop mp 1
+execute unless score #bingo_mode mp matches -1..1 run scoreboard players set #bingo_mode mp 0
+execute unless score #bingo_list mp matches -1..1 run scoreboard players set #bingo_list mp 0
+
+scoreboard players set #bingo_len_easy mp 199

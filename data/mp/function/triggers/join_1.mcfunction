@@ -8,3 +8,4 @@ execute if score #random_team mp matches 1 run return -1
 
 team join red
 tellraw @a [{"text": ">","color": "gold"},{"text": " ","color": "white"},{"selector":"@s"},{"text": " 已加入 ","color": "white"},{"text": "红队","color": "red"}]
+function mp:triggers/menu

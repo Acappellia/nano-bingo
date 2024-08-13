@@ -1,0 +1,36 @@
+{
+    "criteria": {
+        "get_item": {
+            "trigger": "inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "rooted_dirt"
+                        ]
+                    }
+                ],
+                "player": [
+                    {
+                        "condition": "value_check",
+                        "value": {
+                            "type": "score",
+                            "score": "bingo_selected",
+                            "target": {
+                                "type": "minecraft:fixed",
+                                "name": "#item_293"
+                            }
+                        },
+                        "range": {
+                            "min": 1
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "mp:adv/293"
+    },
+    "parent": "mp:root"
+}

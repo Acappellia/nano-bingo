@@ -10,6 +10,10 @@ scoreboard players enable @a help
 scoreboard players enable @a setting_check
 scoreboard players enable @a menu
 
+scoreboard players enable @a setting_deathdrop
+scoreboard players enable @a setting_bingo_list
+scoreboard players enable @a setting_bingo_mode
+
 execute as @a[scores={game_start=1..}] run function mp:triggers/start
 execute as @a[scores={game_vote_stop=1..998}] run function mp:triggers/vote_stop
 
@@ -23,6 +27,13 @@ execute as @a[scores={setting_team_balance=-1}] run function mp:triggers/team_ba
 execute as @a[scores={setting_team_balance=1}] run function mp:triggers/team_balance_on
 execute as @a[scores={setting_bingo_target=-1}] run function mp:triggers/bingo_target_auto
 execute as @a[scores={setting_bingo_target=1..5}] run function mp:triggers/bingo_target
+
+execute as @a[scores={setting_deathdrop=-1}] run function mp:triggers/death_drop_off
+execute as @a[scores={setting_deathdrop=1}] run function mp:triggers/death_drop_on
+execute as @a[scores={setting_bingo_list=-1}] run function mp:triggers/bingo_list_easy
+execute as @a[scores={setting_bingo_list=1}] run function mp:triggers/bingo_list_full
+execute as @a[scores={setting_bingo_mode=-1}] run function mp:triggers/bingo_mode_normal
+execute as @a[scores={setting_bingo_mode=1}] run function mp:triggers/bingo_mode_competitive
 
 execute as @a[scores={player_join_team=-1}] run function mp:triggers/join_0
 execute as @a[scores={player_join_team=1}] run function mp:triggers/join_1

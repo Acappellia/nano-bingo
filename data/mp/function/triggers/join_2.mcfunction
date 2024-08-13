@@ -11,3 +11,4 @@ execute if score #max_team mp matches ..1 run return -1
 
 team join blue
 tellraw @a [{"text": ">","color": "gold"},{"text": " ","color": "white"},{"selector":"@s"},{"text": " 已加入 ","color": "white"},{"text": "蓝队","color": "aqua"}]
+function mp:triggers/menu

@@ -12,15 +12,20 @@ execute unless entity @a[team=!] run scoreboard players set #allow_trigger mp 1
 execute unless entity @a[team=!] run return -1
 
 tellraw @a [{"text": "[ ","color": "light_purple"},{"text": "本局游戏设置","color": "aqua"},{"text": " ]","color": "light_purple"}]
-execute if score #random_team mp matches 1 run tellraw @a [{"text": "> ","color": "gold"},{"text": "随机组队","color": "green"}]
-execute if score #random_team mp matches 0 run tellraw @a [{"text": "> ","color": "gold"},{"text": "玩家预组队","color": "aqua"}]
-execute if score #random_team mp matches 1 if score #team_balance mp matches 0 run tellraw @a [{"text": "> ","color": "gold"},{"text": "未开启队伍人数平衡","color": "yellow"}]
-execute if score #random_team mp matches 1 if score #team_balance mp matches 1 run tellraw @a [{"text": "> ","color": "gold"},{"text": "开启队伍人数平衡","color": "gold"}]
-execute if score #difficulty mp matches 1 run tellraw @a [{"text": "> ","color": "gold"},{"text": "游戏难度 - ","color": "white"},{"text": "简单","color": "green"}]
-execute if score #difficulty mp matches 2 run tellraw @a [{"text": "> ","color": "gold"},{"text": "游戏难度 - ","color": "white"},{"text": "普通","color": "yellow"}]
-execute if score #difficulty mp matches 3 run tellraw @a [{"text": "> ","color": "gold"},{"text": "游戏难度 - ","color": "white"},{"text": "困难","color": "red"}]
-execute unless score #bingo_target mp matches 1.. run tellraw @a [{"text": "> ","color": "gold"},{"text": "目标连线数 - ","color": "white"},{"score":{"name": "#target_score","objective": "bingo_score"},"color": "yellow"},{"text": "　(自动设置)","color": "gray"}]
-execute if score #bingo_target mp matches 1.. run tellraw @a [{"text": "> ","color": "gold"},{"text": "目标连线数 - ","color": "white"},{"score":{"name": "#target_score","objective": "bingo_score"},"color": "yellow"}]
+execute if score #random_team mp matches 0 run tellraw @a [{"text": "> ","color": "gray"},{"text": "玩家预组队","color": "aqua"}]
+execute if score #random_team mp matches 1 if score #team_balance mp matches 0 run tellraw @a [{"text": "> ","color": "gold"},{"text": "随机组队","color": "green"}," ",{"text": "未开启队伍人数平衡","color": "yellow"}]
+execute if score #random_team mp matches 1 if score #team_balance mp matches 1 run tellraw @a [{"text": "> ","color": "gold"},{"text": "随机组队","color": "green"}," ",{"text": "开启队伍人数平衡","color": "gold"}]
+execute if score #bingo_list mp matches 0 run tellraw @a [{"text": "> ","color": "gray"},{"text": "精简物品池","color": "green"}]
+execute if score #bingo_list mp matches 1 run tellraw @a [{"text": "> ","color": "gray"},{"text": "完整物品池","color": "gold"}]
+execute if score #bingo_mode mp matches 0 run tellraw @a [{"text": "> ","color": "gray"},{"text": "游戏模式 - ","color": "white"},{"text": "普通模式","color": "green"}]
+execute if score #bingo_mode mp matches 1 run tellraw @a [{"text": "> ","color": "gray"},{"text": "游戏模式 - ","color": "white"},{"text": "争夺模式","color": "gold"}]
+execute if score #difficulty mp matches 1 run tellraw @a [{"text": "> ","color": "gray"},{"text": "游戏难度 - ","color": "white"},{"text": "简单","color": "green"}]
+execute if score #difficulty mp matches 2 run tellraw @a [{"text": "> ","color": "gray"},{"text": "游戏难度 - ","color": "white"},{"text": "普通","color": "yellow"}]
+execute if score #difficulty mp matches 3 run tellraw @a [{"text": "> ","color": "gray"},{"text": "游戏难度 - ","color": "white"},{"text": "困难","color": "red"}]
+execute if score #death_drop mp matches 0 run tellraw @a [{"text": "> ","color": "gray"},{"text": "死亡掉落 - ","color": "white"},{"text": "关闭","color": "green"}]
+execute if score #death_drop mp matches 1 run tellraw @a [{"text": "> ","color": "gray"},{"text": "死亡掉落 - ","color": "white"},{"text": "开启","color": "gold"}]
+execute unless score #bingo_target mp matches 1.. run tellraw @a [{"text": "> ","color": "gray"},{"text": "目标连线数 - ","color": "white"},{"score":{"name": "#target_score","objective": "bingo_score"},"color": "yellow"},{"text": "　(自动设置)","color": "gray"}]
+execute if score #bingo_target mp matches 1.. run tellraw @a [{"text": "> ","color": "gray"},{"text": "目标连线数 - ","color": "white"},{"score":{"name": "#target_score","objective": "bingo_score"},"color": "yellow"}]
 
 data remove storage mp:bingo t_red.checks
 data remove storage mp:bingo t_green.checks
@@ -69,3 +74,6 @@ time set 1000
 execute if score #difficulty mp matches 1 run difficulty easy
 execute if score #difficulty mp matches 2 run difficulty normal
 execute unless score #difficulty mp matches 1..2 run difficulty hard
+
+execute if score #death_drop mp matches 1 run gamerule keepInventory false
+execute unless score #death_drop mp matches 1 run gamerule keepInventory true
