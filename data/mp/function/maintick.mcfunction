@@ -10,7 +10,6 @@ scoreboard players reset @a check_sprint
 execute as @a if score @s check_boat matches 10.. run scoreboard players set @s boating -3
 scoreboard players reset @a check_boat
 
-clear @a #beds
-clear @a respawn_anchor
+clear @a #mp:beds
 
 function mp:check_trigger
